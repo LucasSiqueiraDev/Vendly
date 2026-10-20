@@ -1,0 +1,189 @@
+vendly-sidebar {
+  display: block;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.vendly-sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: var(--color-brand-blue-dark);
+  color: var(--color-neutral-white);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden !important;
+  overflow-y: hidden;
+  font-family: var(--font-primary);
+}
+
+/* Estado recolhido */
+.vendly-sidebar.collapsed {
+  width: 72px;
+}
+
+/* Navegação central */
+.vendly-sidebar nav {
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.vendly-sidebar nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vendly-sidebar nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.vendly-sidebar nav::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.vendly-sidebar nav::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Links do Menu */
+.sidebar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  color: var(--color-neutral-white);
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  border-radius: 0 0.375rem 0.375rem 0;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 44px; /* Leve ajuste para comportar melhor o ícone maior */
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Faixa Deslizante no Hover */
+.sidebar-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-brand-blue-medium);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: -1;
+}
+
+.sidebar-link:hover::before {
+  width: 100%;
+}
+
+.sidebar-link:hover {
+  color: var(--color-brand-green-action);
+}
+
+/* Estado Ativo */
+.sidebar-link.active {
+  color: var(--color-brand-green-action);
+  border-left-color: var(--color-brand-green-action);
+}
+
+.sidebar-link.active::before {
+  width: 100%;
+}
+
+.sidebar-link .icon-svg,
+.sidebar-link .sidebar-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tamanho dos Ícones (Aumentado de 20px para 24px) */
+.icon-svg {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  flex-shrink: 0;
+}
+
+/* Texto dos Links (Fonte alterada de 300 para 500) */
+.sidebar-text {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 500; /* Medium - use 600 se quiser ainda mais encorpada */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* Títulos das Categorias */
+.sidebar-category-title {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700; /* Leve ajuste de peso e tamanho para destacar */
+  color: var(--color-neutral-gray-light);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0 0.85rem;
+  margin-bottom: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 14px;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* Oculta textos quando a sidebar estiver recolhida */
+.vendly-sidebar.collapsed .sidebar-text,
+.vendly-sidebar.collapsed .sidebar-category-title {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Container do Rodapé */
+.sidebar-footer {
+  background-color: var(--color-brand-blue-medium);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+}
+
+/* Botão de Logout */
+.btn-logout-sidebar {
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-semantic-danger-light) !important;
+}
+
+.btn-logout-sidebar::before {
+  background-color: var(--color-semantic-danger-light) !important;
+}
+
+.btn-logout-sidebar:hover {
+  color: var(--color-neutral-white) !important;
+}
+
+/* Responsivo para Mobile */
+@media (max-width: 767.98px) {
+  .vendly-sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    z-index: 1045;
+    height: 100vh;
+  }
+
+  .vendly-sidebar.show-mobile {
+    left: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+}

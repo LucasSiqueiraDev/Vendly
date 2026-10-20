@@ -1,0 +1,452 @@
+[
+    {
+        "codigo": "SUP-001",
+        "nome": "Arroz Integral 1kg",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 4,50",
+        "precoVenda": "R$ 7,90",
+        "estoque": 120,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-002",
+        "nome": "Feijão Preto 1kg",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 5,20",
+        "precoVenda": "R$ 8,50",
+        "estoque": 85,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-003",
+        "nome": "Açúcar Refinado 1kg",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 3,10",
+        "precoVenda": "R$ 4,99",
+        "estoque": 200,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-004",
+        "nome": "Café Torrado e Moído 500g",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 12,50",
+        "precoVenda": "R$ 18,90",
+        "estoque": 45,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-005",
+        "nome": "Óleo de Soja 900ml",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 4,80",
+        "precoVenda": "R$ 6,89",
+        "estoque": 150,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-006",
+        "nome": "Azeite de Oliva Extra Virgem 500ml",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 28,00",
+        "precoVenda": "R$ 42,90",
+        "estoque": 18,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-007",
+        "nome": "Macarrão Espaguete 500g",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 2,80",
+        "precoVenda": "R$ 4,50",
+        "estoque": 95,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-008",
+        "nome": "Molho de Tomate Sachê 300g",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 1,40",
+        "precoVenda": "R$ 2,69",
+        "estoque": 140,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-009",
+        "nome": "Farinha de Trigo Especial 1kg",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 3,30",
+        "precoVenda": "R$ 5,20",
+        "estoque": 0,
+        "status": "Inativo"
+    },
+    {
+        "codigo": "SUP-010",
+        "nome": "Sal Refinado 1kg",
+        "categoria": "Mercearia",
+        "precoCusto": "R$ 1,10",
+        "precoVenda": "R$ 2,10",
+        "estoque": 180,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-011",
+        "nome": "Leite UHT Integral 1L",
+        "categoria": "Laticínios",
+        "precoCusto": "R$ 3,80",
+        "precoVenda": "R$ 5,49",
+        "estoque": 210,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-012",
+        "nome": "Manteiga com Sal 200g",
+        "categoria": "Laticínios",
+        "precoCusto": "R$ 7,50",
+        "precoVenda": "R$ 11,90",
+        "estoque": 35,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-013",
+        "nome": "Requeijão Cremos 200g",
+        "categoria": "Laticínios",
+        "precoCusto": "R$ 5,10",
+        "precoVenda": "R$ 8,29",
+        "estoque": 40,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-014",
+        "nome": "Queijo Mussarela Fatiado 200g",
+        "categoria": "Laticínios",
+        "precoCusto": "R$ 8,90",
+        "precoVenda": "R$ 13,90",
+        "estoque": 28,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-015",
+        "nome": "Presunto Cozido Fatiado 200g",
+        "categoria": "Frios",
+        "precoCusto": "R$ 6,20",
+        "precoVenda": "R$ 9,90",
+        "estoque": 30,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-016",
+        "nome": "Iogurte Natural 170g",
+        "categoria": "Laticínios",
+        "precoCusto": "R$ 1,80",
+        "precoVenda": "R$ 3,29",
+        "estoque": 50,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-017",
+        "nome": "Creme de Leite TP 200g",
+        "categoria": "Laticínios",
+        "precoCusto": "R$ 2,20",
+        "precoVenda": "R$ 3,89",
+        "estoque": 110,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-018",
+        "nome": "Leite Condensado 395g",
+        "categoria": "Laticínios",
+        "precoCusto": "R$ 4,10",
+        "precoVenda": "R$ 6,50",
+        "estoque": 90,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-019",
+        "nome": "Detergente Líquido 500ml",
+        "categoria": "Limpeza",
+        "precoCusto": "R$ 1,50",
+        "precoVenda": "R$ 2,79",
+        "estoque": 160,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-020",
+        "nome": "Sabão em Pó 1kg",
+        "categoria": "Limpeza",
+        "precoCusto": "R$ 7,80",
+        "precoVenda": "R$ 12,90",
+        "estoque": 75,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-021",
+        "nome": "Amaciante de Roupas 2L",
+        "categoria": "Limpeza",
+        "precoCusto": "R$ 8,20",
+        "precoVenda": "R$ 14,50",
+        "estoque": 42,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-022",
+        "nome": "Desinfetante Pinho 1L",
+        "categoria": "Limpeza",
+        "precoCusto": "R$ 3,90",
+        "precoVenda": "R$ 6,99",
+        "estoque": 65,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-023",
+        "nome": "Limpador Multiuso 500ml",
+        "categoria": "Limpeza",
+        "precoCusto": "R$ 2,70",
+        "precoVenda": "R$ 4,80",
+        "estoque": 80,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-024",
+        "nome": "Esponja de Aço (Pct c/ 8)",
+        "categoria": "Limpeza",
+        "precoCusto": "R$ 2,10",
+        "precoVenda": "R$ 3,99",
+        "estoque": 0,
+        "status": "Inativo"
+    },
+    {
+        "codigo": "SUP-025",
+        "nome": "Papel Higiênico 12 Rolos",
+        "categoria": "Higiene",
+        "precoCusto": "R$ 11,00",
+        "precoVenda": "R$ 17,90",
+        "estoque": 100,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-026",
+        "nome": "Sabonete em Barra 90g",
+        "categoria": "Higiene",
+        "precoCusto": "R$ 1,20",
+        "precoVenda": "R$ 2,39",
+        "estoque": 220,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-027",
+        "nome": "Shampoo Hidratante 350ml",
+        "categoria": "Higiene",
+        "precoCusto": "R$ 7,90",
+        "precoVenda": "R$ 13,90",
+        "estoque": 38,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-028",
+        "nome": "Creme Dental 90g",
+        "categoria": "Higiene",
+        "precoCusto": "R$ 2,40",
+        "precoVenda": "R$ 4,20",
+        "estoque": 130,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-029",
+        "nome": "Desodorante Roll-on 50ml",
+        "categoria": "Higiene",
+        "precoCusto": "R$ 6,50",
+        "precoVenda": "R$ 10,90",
+        "estoque": 45,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-030",
+        "nome": "Refrigerante Guaraná 2L",
+        "categoria": "Bebidas",
+        "precoCusto": "R$ 4,90",
+        "precoVenda": "R$ 7,99",
+        "estoque": 115,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-031",
+        "nome": "Refrigerante Cola 2L",
+        "categoria": "Bebidas",
+        "precoCusto": "R$ 5,80",
+        "precoVenda": "R$ 8,99",
+        "estoque": 140,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-032",
+        "nome": "Suco de Laranja Integral 1L",
+        "categoria": "Bebidas",
+        "precoCusto": "R$ 6,90",
+        "precoVenda": "R$ 11,50",
+        "estoque": 22,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-033",
+        "nome": "Água Mineral Sem Gás 500ml",
+        "categoria": "Bebidas",
+        "precoCusto": "R$ 0,70",
+        "precoVenda": "R$ 1,80",
+        "estoque": 300,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-034",
+        "nome": "Cerveja Puro Malte Lata 350ml",
+        "categoria": "Bebidas",
+        "precoCusto": "R$ 2,30",
+        "precoVenda": "R$ 3,79",
+        "estoque": 250,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-035",
+        "nome": "Biscoito Recheado Chocolate 130g",
+        "categoria": "Biscoitos e Snacks",
+        "precoCusto": "R$ 1,60",
+        "precoVenda": "R$ 2,99",
+        "estoque": 175,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-036",
+        "nome": "Biscoito Cream Cracker 400g",
+        "categoria": "Biscoitos e Snacks",
+        "precoCusto": "R$ 3,10",
+        "precoVenda": "R$ 5,40",
+        "estoque": 88,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-037",
+        "nome": "Salgadinho de Milho 100g",
+        "categoria": "Biscoitos e Snacks",
+        "precoCusto": "R$ 2,80",
+        "precoVenda": "R$ 4,99",
+        "estoque": 60,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-038",
+        "nome": "Chocolate ao Leite Barra 80g",
+        "categoria": "Doces",
+        "precoCusto": "R$ 3,50",
+        "precoVenda": "R$ 5,99",
+        "estoque": 95,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-039",
+        "nome": "Pão de Forma Tradicional 450g",
+        "categoria": "Padaria",
+        "precoCusto": "R$ 4,20",
+        "precoVenda": "R$ 7,20",
+        "estoque": 30,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-040",
+        "nome": "Torrada Tradicional 140g",
+        "categoria": "Padaria",
+        "precoCusto": "R$ 2,90",
+        "precoVenda": "R$ 4,80",
+        "estoque": 0,
+        "status": "Inativo"
+    },
+    {
+        "codigo": "SUP-041",
+        "nome": "Banana Prata (Kg)",
+        "categoria": "Hortifruti",
+        "precoCusto": "R$ 3,20",
+        "precoVenda": "R$ 5,99",
+        "estoque": 50,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-042",
+        "nome": "Maçã Gala (Kg)",
+        "categoria": "Hortifruti",
+        "precoCusto": "R$ 4,80",
+        "precoVenda": "R$ 8,90",
+        "estoque": 40,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-043",
+        "nome": "Tomate Italiano (Kg)",
+        "categoria": "Hortifruti",
+        "precoCusto": "R$ 3,90",
+        "precoVenda": "R$ 6,99",
+        "estoque": 35,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-044",
+        "nome": "Cebola Nacional (Kg)",
+        "categoria": "Hortifruti",
+        "precoCusto": "R$ 2,50",
+        "precoVenda": "R$ 4,50",
+        "estoque": 70,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-045",
+        "nome": "Batata Monalisa (Kg)",
+        "categoria": "Hortifruti",
+        "precoCusto": "R$ 3,10",
+        "precoVenda": "R$ 5,49",
+        "estoque": 80,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-046",
+        "nome": "Peito de Frango Congelado 1kg",
+        "categoria": "Açougue e Congelados",
+        "precoCusto": "R$ 11,50",
+        "precoVenda": "R$ 16,90",
+        "estoque": 45,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-047",
+        "nome": "Carne Moída Bovina 500g",
+        "categoria": "Açougue e Congelados",
+        "precoCusto": "R$ 14,00",
+        "precoVenda": "R$ 21,90",
+        "estoque": 25,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-048",
+        "nome": "Linguiça Toscana 1kg",
+        "categoria": "Açougue e Congelados",
+        "precoCusto": "R$ 13,20",
+        "precoVenda": "R$ 19,90",
+        "estoque": 30,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-049",
+        "nome": "Pizza Congelada Calabresa 400g",
+        "categoria": "Açougue e Congelados",
+        "precoCusto": "R$ 8,50",
+        "precoVenda": "R$ 13,90",
+        "estoque": 20,
+        "status": "Ativo"
+    },
+    {
+        "codigo": "SUP-050",
+        "nome": "Batata Palito Congelada 1kg",
+        "categoria": "Açougue e Congelados",
+        "precoCusto": "R$ 9,80",
+        "precoVenda": "R$ 15,90",
+        "estoque": 18,
+        "status": "Ativo"
+    }
+]

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendly - Categorias</title>
+</head>
+
+<body>
+
+    <vendly-shell>
+        <div class="container-fluid p-0">
+
+            <!-- Cabeçalho da Tela -->
+            <vendly-page-header 
+                title="Lista de Categorias" 
+                button-text="Criar Categoria" 
+                button-id="btnCriarCategoria">
+            </vendly-page-header>
+
+            <!-- Card com a Tabela -->
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <vendly-table id="tabelaCategoriasComponent" table-id="tabelaCategorias"></vendly-table>
+                </div>
+            </div>
+
+        </div>
+    </vendly-shell>
+
+    <script type="module" src="/src/app.js"></script>
+
+    <!-- Script específico da página de Categorias -->
+    <script type="module">
+        import { getCategorias } from '/src/apiServices/endpoints/categoriaService.js';
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            // Define as colunas: Nome e Ações com ícones de Caneta e Lixeira
+            const colunasCategorias = [
+                { title: "Nome da Categoria", data: "nome" },
+                {
+                    title: "Ações",
+                    data: null,
+                    orderable: false,
+                    className: "text-end",
+                    render: function (data, type, row) {
+                        return `
+                            <div class="d-flex justify-content-end gap-2">
+                                <button class="btn btn-sm btn-outline-primary btn-editar-categoria border-0" data-id="${row.id}" title="Editar Categoria" type="button">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger btn-excluir-categoria border-0" data-id="${row.id}" title="Excluir Categoria" type="button">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                        `;
+                    }
+                }
+            ];
+
+            // Aguarda o registro do Web Component no app.js
+            await customElements.whenDefined("vendly-table");
+
+            const categorias = await getCategorias();
+            const tabelaComponent = document.querySelector("#tabelaCategoriasComponent");
+
+            if (tabelaComponent && typeof tabelaComponent.inicializarTabela === "function") {
+                tabelaComponent.inicializarTabela(colunasCategorias, categorias);
+
+                // Captura os cliques nos botões de Editar e Excluir usando delegação de eventos
+                const elementoTabela = tabelaComponent.querySelector("#tabelaCategorias");
+                if (elementoTabela) {
+                    elementoTabela.addEventListener("click", (e) => {
+                        const btnEditar = e.target.closest(".btn-editar-categoria");
+                        const btnExcluir = e.target.closest(".btn-excluir-categoria");
+
+                        if (btnEditar) {
+                            e.stopPropagation(); // Impede outros eventos de linha
+                            const id = btnEditar.getAttribute("data-id");
+                            console.log("Ação: Editar categoria ID:", id);
+                        }
+
+                        if (btnExcluir) {
+                            e.stopPropagation(); // Impede outros eventos de linha
+                            const id = btnExcluir.getAttribute("data-id");
+                            console.log("Ação: Excluir categoria ID:", id);
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

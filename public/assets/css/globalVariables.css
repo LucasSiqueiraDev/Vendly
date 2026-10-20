@@ -1,0 +1,67 @@
+/* Importação das fontes do Google Fonts - Inter + Quicksand */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+
+    /* ==========================================================================
+     0. FONTES DO SISTEMA
+     ========================================================================== */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-secondary: 'Quicksand', sans-serif;
+
+    /* ==========================================================================
+     1. CORES DE MARCA (BRAND TOKENS)
+     ========================================================================== */
+
+    /* Azul Primário - Navegação, botões secundários e estruturas do sistema */
+    --color-brand-blue-medium: #0D3687;
+
+    /* Azul Escuro - Sidebar, barras superiores e fundo principal em Dark Mode */
+    --color-brand-blue-dark: #051A34;
+
+    /* Verde Menta Claro - Ações de alto destaque (ex: Botão "Finalizar Venda") */
+    --color-brand-green-action: #1DDC86;
+
+    /* Verde Escuro Médio - Badges e cards de destaque institucional */
+    --color-brand-green-medium: #056138;
+
+    /* Verde Escuro Deep - Superfícies e cabeçalhos escuros em verde */
+    --color-brand-green-dark: #00381F;
+
+
+    /* ==========================================================================
+     2. CORES NEUTRAS (NEUTRAL TOKENS)
+     ========================================================================== */
+
+    /* Off-White Frio - Fundo da tela em Light Mode e textos em superfícies escuras */
+    --color-neutral-white: #F8FAFB;
+
+    /* Azul-Cinza Claro - Cards secundários, campos de entrada e divisores */
+    --color-neutral-gray-light: #B8C5E0;
+
+    /* Grafite Escuro - Fundo de cards/modais no Dark Mode e textos secundários */
+    --color-neutral-gray-dark: #111827;
+
+    /* Preto Noturno - Texto principal no Light Mode e fundo geral no Dark Mode */
+    --color-neutral-black: #0A0F1D;
+
+
+    /* ==========================================================================
+     3. CORES SEMÂNTICAS (SEMANTIC TOKENS)
+     ========================================================================== */
+
+    /* Vermelho Erro Padrão (para fundos claros/tabelas) */
+    --color-semantic-danger: #910815; 
+
+    /* Vermelho Erro Light (para superfícies escuras como Sidebar/Navbar) */
+    --color-semantic-danger-light: #F87171; /* Ou #EF4444 para um tom bem vivo */
+
+    /* Verde Sucesso - Status de transação concluída e estoque disponível */
+    --color-semantic-success: #255D18;
+
+    /* Amarelo Alerta - Avisos de atenção moderada e lembretes */
+    --color-semantic-warning-yellow: #F0B400;
+
+    /* Laranja Alerta - Avisos críticos de estoque baixo e pendências financeiras */
+    --color-semantic-warning-orange: #FF7B0F;
+}

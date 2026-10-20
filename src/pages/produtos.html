@@ -1,0 +1,78 @@
+<vendly-shell>
+    <div class="container-fluid p-0">
+        <vendly-page-header title="Lista de Produtos" button-text="Criar Produto"
+            button-id="btnCriarProduto"></vendly-page-header>
+
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-body p-4">
+                <vendly-table id="tabelaProdutosComponent" table-id="tabelaProdutos"></vendly-table>
+            </div>
+        </div>
+
+        <!-- Componente de Modal Reutilizável -->
+        <vendly-modal id="modalProdutos" modal-id="modalDetalhesProduto" title="Detalhes do Produto"></vendly-modal>
+    </div>
+</vendly-shell>
+
+<script type="module" src="/src/app.js"></script>
+
+<script type="module">
+    import { getProdutos } from '/src/apiServices/endpoints/produtoService.js';
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        const colunasProdutos = [
+            { title: "Código SKU", data: "codigo" },
+            { title: "Nome do Produto", data: "nome" },
+            { title: "Categoria", data: "categoria" },
+            { title: "Preço Custo", data: "precoCusto" },
+            { title: "Preço Venda", data: "precoVenda" },
+            { title: "Quantidade", data: "estoque" },
+            {
+                title: "Status",
+                data: "status",
+                render: function (data) {
+                    // Define as cores com base no status "Ativo" ou "Inativo"
+                    const isAtivo = data === "Ativo";
+                    const badgeClass = isAtivo
+                        ? "bg-success-subtle text-success border border-success"
+                        : "bg-danger-subtle text-danger border border-danger";
+
+                    return `<span class="badge ${badgeClass} px-2 py-1 fw-semibold">${data}</span>`;
+                }
+            }
+        ];
+
+        await customElements.whenDefined("vendly-table");
+        await customElements.whenDefined("vendly-modal");
+
+        const produtos = await getProdutos();
+        const tabelaComponent = document.querySelector("#tabelaProdutosComponent");
+        const modalComponent = document.querySelector("#modalProdutos");
+
+        if (tabelaComponent) {
+            tabelaComponent.inicializarTabela(colunasProdutos, produtos);
+
+            // Escuta o evento de clique emitido pela tabela
+            tabelaComponent.addEventListener("row-click", (e) => {
+                const { data, colunas } = e.detail;
+
+                // Monta o HTML com os detalhes
+                let conteudoHtml = '<ul class="list-group list-group-flush">';
+                colunas.forEach(col => {
+                    if (col.data && data[col.data] !== undefined) {
+                        conteudoHtml += `
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                <span class="fw-semibold text-secondary">${col.title}:</span>
+                                <span class="text-dark fw-bold">${data[col.data]}</span>
+                            </li>
+                        `;
+                    }
+                });
+                conteudoHtml += '</ul>';
+
+                // Abre o modal isolado
+                modalComponent.abrir(`Detalhes: ${data.nome}`, conteudoHtml);
+            });
+        }
+    });
+</script>

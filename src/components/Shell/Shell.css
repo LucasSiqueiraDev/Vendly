@@ -1,0 +1,23 @@
+vendly-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.shell-body {
+  display: flex;
+  flex: 1;
+  min-height: 0; /* Essencial para flexbox não estourar a tela */
+  height: calc(100vh - 56px); /* Subtrai a altura da Navbar */
+  overflow: hidden;
+}
+
+.shell-main {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  overflow-y: auto; /* Apenas o conteúdo central rola, se necessário */
+  overflow-x: hidden;
+}

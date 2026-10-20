@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nome": "Carlos Silva",
+        "telefone": "(12) 98112-3456",
+        "email": "carlos.silva@vendly.com",
+        "nivelAcesso": "Administrador",
+        "status": "Ativo"
+    },
+    {
+        "id": 2,
+        "nome": "Ana Souza",
+        "telefone": "(12) 98223-4567",
+        "email": "ana.souza@vendly.com",
+        "nivelAcesso": "Gerente",
+        "status": "Ativo"
+    },
+    {
+        "id": 3,
+        "nome": "Lucas Oliveira",
+        "telefone": "(12) 99334-5678",
+        "email": "lucas.oliveira@vendly.com",
+        "nivelAcesso": "Operator de Caixa",
+        "status": "Ativo"
+    },
+    {
+        "id": 4,
+        "nome": "Mariana Santos",
+        "telefone": "(12) 98445-6789",
+        "email": "mariana.santos@vendly.com",
+        "nivelAcesso": "Operator de Caixa",
+        "status": "Inativo"
+    },
+    {
+        "id": 5,
+        "nome": "Roberto Costa",
+        "telefone": "(12) 99556-7890",
+        "email": "roberto.costa@vendly.com",
+        "nivelAcesso": "Estoquista",
+        "status": "Ativo"
+    }
+]

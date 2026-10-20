@@ -1,0 +1,171 @@
+.vendly-navbar {
+  background-color: var(--color-brand-blue-medium);
+  border-color: var(--color-brand-blue-medium) !important;
+  font-family: var(--font-primary);
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   MARCA E LOGO (ESTRUTURA DE OVERLAY PARA TRANSIÇÃO DE ÍCONE)
+   ========================================================================== */
+
+/* Container das imagens empilhadas */
+.logo-wrapper {
+  position: relative;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo base compartilhado entre os dois SVGs */
+.vendly-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* A imagem animada/colorida fica posicionada exatamente por cima da padrão */
+.logo-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Oculta por padrão */
+}
+
+/* Texto do Nome da Marca ao Lado da Logo */
+.vendly-brand-text {
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-neutral-white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: color 0.25s ease;
+}
+
+/* Container Clicável da Marca (Logo + Texto) */
+.navbar-brand-link {
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem; /* Bordas arredondadas estilo pílula */
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover: Pílula sutil no container + Alternância das Logos */
+.navbar-brand-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo branco sutil com 10% de opacidade */
+  transform: translateY(-1px); /* Leve elevação indicando interatividade */
+}
+
+/* Esconde a logo padrão e mostra a versão colorida/animada */
+.navbar-brand-link:hover .logo-default {
+  opacity: 0;
+}
+
+.navbar-brand-link:hover .logo-hover {
+  opacity: 1;
+  transform: scale(1.05); /* Pequeno efeito de destaque */
+}
+
+/* Altera a cor do texto para o Verde de Ação da marca no hover */
+.navbar-brand-link:hover .vendly-brand-text {
+  color: var(--color-brand-green-action);
+}
+
+/* ==========================================================================
+   OUTROS ELEMENTOS DA NAVBAR
+   ========================================================================== */
+
+.icon-svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.nav-btn-hover {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-btn-hover:hover {
+  background-color: var(--color-brand-blue-medium);
+  color: var(--color-brand-green-action);
+}
+
+/* Container do Botão Hambúrguer */
+.btn-hamburger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.btn-hamburger .icon-svg {
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s ease;
+}
+
+/* 1. ESTADO PADRÃO (Sem .is-open) */
+.btn-hamburger:not(.is-open) .icon-close {
+  opacity: 1 !important;
+  transform: rotate(0deg) scale(1);
+}
+
+.btn-hamburger:not(.is-open) .icon-menu {
+  opacity: 0 !important;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+/* 2. ESTADO COM .is-open */
+.btn-hamburger.is-open .icon-close {
+  opacity: 0 !important;
+  transform: rotate(90deg) scale(0.5);
+}
+
+.btn-hamburger.is-open .icon-menu {
+  opacity: 1 !important;
+  transform: rotate(0deg) scale(1);
+}
+
+/* HOVER do Hambúrguer */
+.btn-hamburger:hover .icon-svg {
+  color: var(--color-brand-green-action);
+}
+
+.max-w-search {
+  max-width: 500px;
+}
+
+.btn-search {
+  background-color: var(--color-brand-blue-medium);
+  color: var(--color-neutral-white);
+  font-family: var(--font-primary);
+  font-weight: 300;
+  transition: background-color 0.2s ease;
+}
+
+.btn-search:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--color-brand-green-action);
+}
+
+.bg-warning-orange {
+  background-color: var(--color-semantic-warning-orange);
+}
+
+.notif-badge {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--color-neutral-white);
+}
