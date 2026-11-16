@@ -23,6 +23,6 @@ vendly/
 
 ## 👥 Equipe de Desenvolvimento
 * Flávio Luis de Paula Ramos Pereira Barbosa
-* Lucas dos Siqueira
+* Lucas dos Santos Siqueira
 * Matheus Emílio Soares França Silva
 * Rafael Lima Fonseca Borges
