@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Vendly - Histórico de Vendas</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+    <link rel="stylesheet" href="/public/assets/css/pages/historicoVendas.css">
+</head>
+
+<body>
+    <vendly-shell>
+        <div class="container-fluid p-0">
+            <vendly-page-header section-label="Vendas / Histórico de Vendas" title="Histórico de Vendas"></vendly-page-header>
+
+            <vendly-history-filter id="filtrosHistorico" disabled
+                search-placeholder="Venda, cliente, operador ou status..."></vendly-history-filter>
+
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <p id="resumoHistorico" role="status" aria-live="polite"></p>
+                    <vendly-table id="tabelaHistoricoVendasComponent" table-id="tabelaHistoricoVendas"
+                        aria-label="Histórico de vendas"></vendly-table>
+                </div>
+            </div>
+
+            <vendly-modal id="modalHistoricoVendas" modal-id="modalDetalhesVenda" title="Detalhes da venda"></vendly-modal>
+        </div>
+    </vendly-shell>
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/public/assets/js/pages/historicoVendas.js"></script>
+</body>
+</html>

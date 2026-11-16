@@ -1,0 +1,169 @@
+/* Estilos apenas dos cadastros; demais modais mantêm sua aparência. */
+vendly-modal.cadastro-modal .modal-content {
+    color: var(--color-brand-blue-dark);
+    background: var(--color-neutral-white);
+}
+
+.cadastro-modal .modal-header,
+.cadastro-modal .modal-footer {
+    border-color: var(--color-neutral-gray-light);
+}
+
+.modal-header{
+    background-color: var(--color-brand-blue-medium);
+    color: var(--color-neutral-white);
+}
+
+.cadastro-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.cadastro-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cadastro-field-wide,
+.cadastro-form-note,
+.cadastro-form-error {
+    grid-column: 1 / -1;
+}
+
+.cadastro-modal .form-control,
+.cadastro-modal .form-select {
+    color: var(--color-brand-blue-dark);
+    background-color: var(--color-neutral-white);
+    border-color: var(--color-neutral-gray-light);
+    min-height: 42px;
+}
+
+.cadastro-modal .form-control:disabled,
+.cadastro-modal .form-select:disabled {
+    opacity: 1;
+    color: var(--color-neutral-gray-dark);
+    border-style: dashed;
+}
+
+.cadastro-modal input:focus,
+.cadastro-modal select:focus,
+.cadastro-modal button:focus-visible {
+    outline: 2px solid var(--color-brand-blue-medium);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.cadastro-form-note,
+.cadastro-form-error {
+    margin: 0;
+    font-size: 13px;
+}
+
+.cadastro-form-error {
+    color: var(--color-semantic-danger);
+}
+
+.cadastro-modal .cadastro-secondary {
+    color: var(--color-brand-blue-medium);
+    border: 1px solid var(--color-brand-blue-medium);
+    background: var(--color-neutral-white);
+}
+
+.cadastro-modal .cadastro-danger,
+vendly-table .cadastro-danger {
+    color: var(--color-neutral-white);
+    background: var(--color-semantic-danger);
+    border: 1px solid var(--color-semantic-danger);
+}
+
+.cadastro-modal .cadastro-secondary:hover {
+    color: var(--color-neutral-white);
+    background: var(--color-brand-blue-medium);
+}
+
+.cadastro-modal .cadastro-danger:hover {
+    filter: brightness(.85);
+}
+
+/* Interruptor: texto e posição também identificam o estado. */
+.cadastro-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    min-height: 42px;
+    cursor: pointer;
+}
+
+.cadastro-status input {
+    appearance: none;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+    margin: 0;
+    border: 1px solid var(--color-semantic-danger);
+    border-radius: 20px;
+    background: var(--color-semantic-danger);
+    position: relative;
+    cursor: inherit;
+}
+
+.cadastro-status input::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background: var(--color-neutral-white);
+    transition: transform .15s;
+}
+
+.cadastro-status input:checked {
+    background: var(--color-semantic-success);
+    border-color: var(--color-semantic-success);
+}
+
+.cadastro-status input:checked::before {
+    transform: translateX(22px);
+}
+
+.cadastro-status:has(input:disabled) {
+    cursor: default;
+}
+
+@media (max-width: 575px) {
+    .cadastro-form {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cadastro-status input::before {
+        transition: none;
+    }
+}
+
+
+/* Ícones dos botões: acompanham a cor do texto e não interceptam o clique. */
+.vendly-button-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-inline-end: 6px;
+    vertical-align: -3px;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+/* Ícone de fechar branco no cabeçalho de todos os modais do componente. */
+vendly-modal .modal-header .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}

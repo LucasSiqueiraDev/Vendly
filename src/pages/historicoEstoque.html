@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Vendly - Histórico de Estoque</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+    <link rel="stylesheet" href="/public/assets/css/pages/historicoEstoque.css">
+</head>
+
+<body>
+    <vendly-shell>
+        <div class="container-fluid p-0">
+            <vendly-page-header section-label="Estoque / Histórico de Estoque" title="Histórico de Estoque"></vendly-page-header>
+
+            <vendly-history-filter id="filtrosHistoricoEstoque" disabled
+                search-placeholder="Produto, código, tipo ou responsável..."></vendly-history-filter>
+
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <p id="resumoHistoricoEstoque" role="status" aria-live="polite"></p>
+                    <vendly-table id="tabelaHistoricoEstoqueComponent" table-id="tabelaHistoricoEstoque"
+                        aria-label="Histórico de movimentações de estoque"></vendly-table>
+                </div>
+            </div>
+
+            <vendly-modal id="modalHistoricoEstoque" modal-id="modalDetalhesMovimentacao"
+                title="Detalhes da movimentação"></vendly-modal>
+        </div>
+    </vendly-shell>
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/public/assets/js/pages/historicoEstoque.js"></script>
+</body>
+</html>

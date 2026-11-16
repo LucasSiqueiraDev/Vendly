@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vendly - Frente de Caixa</title>
+
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+
+    <link rel="stylesheet" href="/public/assets/css/pages/frenteCaixa.css">
+</head>
+
+<body class="vendly-pdv-page">
+    <vendly-shell>
+        <section class="pdv-page" aria-label="Frente de caixa">
+
+            <!-- CABEÇALHO DA PÁGINA -->
+
+            <vendly-page-header id="pdvCabecalho" section-label="Vendas / Atendimento" title="Frente de caixa"
+                caixa-status="fechado" caixa-gerenciavel></vendly-page-header>
+
+            <p id="pdvErro" class="pdv-message is-error" role="alert" hidden></p>
+
+
+            <!-- ABAS DE VENDA E GERENCIAMENTO -->
+
+            <div class="pdv-tabs-shell">
+                <div class="pdv-tabs" role="tablist" aria-label="Áreas da frente de caixa">
+                    <button id="pdvAbaVenda" role="tab" aria-selected="true" aria-controls="pdvPainelVenda" disabled>
+                        Ponto de Venda
+                    </button>
+
+                    <button id="pdvAbaGerenciar" role="tab" aria-selected="false" aria-controls="pdvPainelGerenciar"
+                        tabindex="-1" disabled>
+                        Gerenciar Caixa
+                    </button>
+                </div>
+
+
+                <!-- PAINEL: PONTO DE VENDA -->
+
+                <section id="pdvPainelVenda" role="tabpanel" aria-labelledby="pdvAbaVenda">
+                    <div class="pdv-boundary">
+
+                        <!-- Liberado pelo JavaScript após abrir o caixa. -->
+                        <div id="pdvConteudo" class="pdv-grid" inert>
+                            <div class="pdv-workspace">
+
+                                <!-- BUSCA E CATÁLOGO DE PRODUTOS -->
+
+                                <section class="card pdv-card p-3" aria-label="Adicionar produto">
+                                    <h2 class="h6">Adicionar produto</h2>
+
+                                    <div class="row g-2 my-2">
+                                        <label class="col">
+                                            Produto
+
+                                            <input id="pdvBusca" class="form-control mt-1" type="search"
+                                                placeholder="Nome ou código SKU" autocomplete="off">
+                                        </label>
+
+                                        <label class="pdv-quantity">
+                                            Quantidade
+
+                                            <input id="pdvQuantidade" class="form-control mt-1" type="number"
+                                                min="0.001" step="0.001" value="1">
+                                        </label>
+                                    </div>
+
+                                    <div id="pdvCatalogo" class="pdv-catalogo">
+
+                                        <!-- Lista de categorias preenchida pelo JavaScript. -->
+                                        <aside id="pdvCategoriasColuna" class="pdv-categories">
+                                            <div class="pdv-heading">
+                                                <h3>Categorias</h3>
+
+                                                <button id="pdvCategoriasRecolher" aria-label="Recolher categorias"
+                                                    aria-controls="pdvCategoriasColuna" aria-expanded="true">
+                                                    ‹
+                                                </button>
+                                            </div>
+
+                                            <nav id="pdvCatalogoCategorias" aria-label="Categorias de produtos"></nav>
+                                        </aside>
+
+                                        <!-- Lista de produtos preenchida pelo JavaScript. -->
+                                        <div class="pdv-products">
+                                            <div class="pdv-heading">
+                                                <button id="pdvCategoriasExpandir" aria-label="Expandir categorias"
+                                                    aria-controls="pdvCategoriasColuna" aria-expanded="false" hidden>
+                                                    ▦
+                                                </button>
+
+                                                <h3 id="pdvCategoriaTitulo">
+                                                    Produtos
+                                                </h3>
+                                            </div>
+
+                                            <div id="pdvCatalogoProdutos" class="pdv-products-list"></div>
+                                        </div>
+                                    </div>
+
+                                    <p id="pdvVendaMensagem" class="pdv-message" role="status"></p>
+                                </section>
+
+
+                                <!-- ITENS DO CARRINHO -->
+
+                                <section class="card pdv-card" aria-label="Itens da venda">
+                                    <div class="pdv-heading p-3">
+                                        <h2>Itens da venda</h2>
+                                        <span id="pdvContador">0 produtos</span>
+                                    </div>
+
+                                    <vendly-table id="pdvItensComponent" table-id="pdvItensTabela"
+                                        aria-label="Itens da venda"></vendly-table>
+
+                                    <footer class="pdv-heading p-3">
+                                        <span id="pdvRodapeItens">
+                                            Nenhum produto adicionado
+                                        </span>
+
+                                        <button id="pdvCancelarVenda" class="pdv-danger" disabled>
+                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18"
+                                                height="18" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg>
+
+                                            Cancelar venda
+                                        </button>
+                                    </footer>
+                                </section>
+                            </div>
+
+
+                            <!-- RESUMO DA VENDA -->
+
+                            <aside class="pdv-summary" aria-label="Resumo da venda">
+                                <small>ATENDIMENTO ATUAL</small>
+                                <h2>Resumo da venda</h2>
+                                <span>Nova venda</span>
+
+                                <p class="my-4">
+                                    Cliente
+                                    <br>
+                                    <strong>Consumidor final</strong>
+                                </p>
+
+                                <dl>
+                                    <div>
+                                        <dt>Produtos na venda</dt>
+                                        <dd id="pdvResumoQuantidade">0</dd>
+                                    </div>
+
+                                    <div>
+                                        <dt>Subtotal</dt>
+                                        <dd id="pdvSubtotal">R$ 0,00</dd>
+                                    </div>
+
+                                    <div>
+                                        <dt>Desconto</dt>
+                                        <dd>R$ 0,00</dd>
+                                    </div>
+                                </dl>
+
+                                <div class="pdv-total">
+                                    <span>Total da venda</span>
+                                    <strong id="pdvTotal">R$ 0,00</strong>
+
+                                    <button id="pdvFinalizarVenda" type="button" disabled>
+                                        Finalizar venda →
+                                    </button>
+
+                                    <small>
+                                        Confira os itens e as quantidades da venda.
+                                    </small>
+                                </div>
+                            </aside>
+                        </div>
+
+
+                        <!-- BLOQUEIO DO ATENDIMENTO COM O CAIXA FECHADO -->
+
+                        <div id="pdvOverlay" class="pdv-overlay" aria-label="Caixa fechado">
+                            <div id="pdvGate">
+                                <span id="pdvIcone" class="pdv-state-icon" aria-hidden="true">
+                                    ×
+                                </span>
+
+                                <h2 id="pdvGateTitulo">Caixa Fechado</h2>
+                                <p>Abra o caixa para começar o atendimento.</p>
+
+                                <button id="pdvAbrir" class="btn btn-action-blue px-4 py-2" disabled>
+                                    Carregando...
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- PAINEL: GERENCIAMENTO DO CAIXA -->
+
+                <section id="pdvPainelGerenciar" role="tabpanel" aria-labelledby="pdvAbaGerenciar" hidden>
+                    <div id="caixaVisaoAtual">
+                        <div class="pdv-heading mb-3">
+                            <h2>Gerenciar Caixa</h2>
+
+                            <button id="caixaHistoricoAbrir" class="pdv-secondary">
+                                Histórico de caixas
+                            </button>
+                        </div>
+
+                        <p id="caixaMensagem" class="pdv-message" role="status"></p>
+
+
+                        <!-- INDICADORES FINANCEIROS -->
+
+                        <div class="caixa-stats">
+                            <article class="card pdv-card caixa-balance">
+                                <span>Saldo esperado em dinheiro</span>
+                                <strong id="caixaSaldo">—</strong>
+                            </article>
+
+                            <article class="card pdv-card">
+                                <span>Valor inicial</span>
+                                <strong id="caixaValorInicial">—</strong>
+                            </article>
+
+                            <article class="card pdv-card">
+                                <span>Entradas após abertura</span>
+                                <strong id="caixaEntradas">—</strong>
+                            </article>
+
+                            <article class="card pdv-card">
+                                <span>Saídas</span>
+                                <strong id="caixaSaidas">—</strong>
+                            </article>
+                        </div>
+
+
+                        <!-- DADOS, ABERTURA E FECHAMENTO DO CAIXA -->
+
+                        <div class="caixa-details">
+                            <section class="card pdv-card p-3" aria-label="Dados do caixa">
+                                <div class="pdv-heading mb-3">
+                                    <h3>Dados do caixa</h3>
+                                    <span id="caixaEstado"></span>
+                                </div>
+
+                                <p>
+                                    Abertura:
+                                    <span id="caixaDataAbertura">—</span>
+                                </p>
+
+                                <p>
+                                    Fechamento:
+                                    <span id="caixaDataFechamento">—</span>
+                                </p>
+
+                                <form id="caixaFormularioAbertura">
+                                    <label for="caixaValorAbertura">
+                                        Valor inicial para troco
+                                    </label>
+
+                                    <div class="input-group my-2">
+                                        <span class="input-group-text">R$</span>
+
+                                        <input id="caixaValorAbertura" class="form-control" inputmode="decimal"
+                                            value="0,00" required>
+                                    </div>
+
+                                    <button id="caixaConfirmarAbertura" class="btn btn-action-blue w-100">
+                                        Abrir caixa
+                                    </button>
+                                </form>
+
+                                <button id="caixaFechar" class="pdv-danger w-100" hidden>
+                                    Fechar caixa
+                                </button>
+                            </section>
+
+
+                            <!-- MOVIMENTAÇÕES DO CAIXA ATUAL -->
+
+                            <section class="card pdv-card" aria-label="Movimentações">
+                                <h3 class="p-3 m-0">Movimentações</h3>
+
+                                <vendly-table id="caixaMovimentosComponent" table-id="caixaMovimentosTabela"
+                                    aria-label="Movimentações do caixa"></vendly-table>
+                            </section>
+                        </div>
+
+                        <p class="pdv-note mt-3">
+                            O saldo considera o valor inicial.
+                            A venda em andamento ainda não movimenta o caixa.
+                        </p>
+                    </div>
+
+
+                    <!-- HISTÓRICO DE CAIXAS -->
+
+                    <section id="caixaVisaoHistorico" aria-label="Histórico de caixas" hidden>
+                        <div class="pdv-heading mb-3">
+                            <h2>Histórico de caixas</h2>
+
+                            <button id="caixaHistoricoVoltar" class="pdv-secondary">
+                                Voltar ao gerenciamento
+                            </button>
+                        </div>
+
+                        <p id="caixaHistoricoEstado" class="pdv-message" role="status"></p>
+
+                        <div id="caixaHistoricoLista" class="card pdv-card">
+                            <label class="d-flex align-items-center gap-2 p-3">
+                                Exibir
+
+                                <select id="caixaHistoricoFiltro" class="form-select w-auto"
+                                    aria-label="Filtrar caixas por status">
+                                    <option value="TODOS">Todos os caixas</option>
+                                    <option value="ABERTO">Abertos</option>
+                                    <option value="FECHADO">Fechados</option>
+                                </select>
+                            </label>
+
+                            <vendly-table id="caixaHistoricoComponent" table-id="caixaHistoricoTabela"
+                                aria-label="Histórico de caixas"></vendly-table>
+                        </div>
+
+
+                        <!-- DETALHES DO CAIXA CONSULTADO -->
+
+                        <section id="caixaHistoricoDetalhe" class="card pdv-card p-3" aria-label="Detalhes do caixa"
+                            hidden>
+                            <div class="pdv-heading mb-3">
+                                <h3 id="caixaHistoricoDetalheTitulo">
+                                    Detalhes do caixa
+                                </h3>
+
+                                <button id="caixaHistoricoVoltarLista" class="pdv-secondary">
+                                    Voltar à lista
+                                </button>
+                            </div>
+
+                            <dl id="caixaHistoricoDados" class="caixa-history-data"></dl>
+
+                            <h3>Movimentações da abertura</h3>
+
+                            <vendly-table id="caixaHistoricoMovimentosComponent"
+                                table-id="caixaHistoricoMovimentosTabela"
+                                aria-label="Movimentações do caixa consultado"></vendly-table>
+                        </section>
+
+                    </section>
+                </section>
+
+            </div>
+
+
+            <!-- MODAL DE FINALIZAÇÃO DA VENDA -->
+
+            <vendly-modal id="pdvFinalizarModal" modal-id="modalFinalizarVenda" title="Finalizar venda"></vendly-modal>
+
+        </section>
+    </vendly-shell>
+
+
+    <!-- LÓGICA DA PÁGINA -->
+
+    <script type="module" src="/public/assets/js/pages/frenteCaixa.js"></script>
+</body>
+
+</html>

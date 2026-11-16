@@ -1,0 +1,95 @@
+vendly-history-filter {
+    display: block;
+    min-width: 0;
+    color: var(--color-brand-blue-dark);
+}
+
+.history-filter-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.history-filter p {
+    font-size: 14px;
+}
+
+.history-filter fieldset {
+    min-width: 0;
+}
+
+.history-filter-fields {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.history-filter-fields label {
+    display: flex;
+    flex: 1 1 160px;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.history-filter-fields .history-filter-search {
+    flex: 2 1 240px;
+}
+
+.history-filter .form-control {
+    min-width: 0;
+    min-height: 42px;
+    color: var(--color-brand-blue-dark);
+    background: var(--color-neutral-white);
+    border-color: var(--color-neutral-gray-light);
+    font: inherit;
+}
+
+.history-filter .form-control:focus {
+    outline: 2px solid var(--color-brand-blue-medium);
+    outline-offset: 1px;
+    box-shadow: none;
+}
+
+.history-filter .form-control::placeholder {
+    color: var(--color-neutral-gray-dark);
+}
+
+.history-filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.history-filter-actions .btn {
+    min-height: 42px;
+}
+
+.history-filter-clear {
+    color: var(--color-brand-blue-medium);
+    border: 1px solid var(--color-brand-blue-medium);
+    background: var(--color-neutral-white);
+}
+
+.history-filter-clear:hover {
+    color: var(--color-neutral-white);
+    background: var(--color-brand-blue-medium);
+}
+
+.history-filter .history-filter-error {
+    color: var(--color-semantic-danger);
+}
+
+@media (max-width: 600px) {
+    .history-filter-fields label,
+    .history-filter-fields .history-filter-search {
+        flex-basis: 100%;
+    }
+
+    .history-filter-actions,
+    .history-filter-actions .btn {
+        flex: 1;
+    }
+}

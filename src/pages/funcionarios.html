@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Vendly - Funcionários</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+</head>
+
+<body>
+
+    <vendly-shell>
+        <div class="container-fluid p-0">
+
+            <!-- Cabeçalho da Tela -->
+            <vendly-page-header section-label="Administração / Funcionários" title="Lista de Funcionários" button-text="Novo Funcionário"
+                button-id="btnCriarFuncionario">
+            </vendly-page-header>
+
+            <!-- Card com a Tabela -->
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <vendly-table id="tabelaFuncionariosComponent" table-id="tabelaFuncionarios"></vendly-table>
+                </div>
+            </div>
+
+            <!-- Modal Reutilizável de Detalhes -->
+            <vendly-modal id="modalFuncionarios" modal-id="modalDetalhesFuncionario"
+                title="Detalhes do Funcionário"></vendly-modal>
+
+        </div>
+    </vendly-shell>
+
+    <script type="module" src="/src/app.js"></script>
+
+    <!-- Script específico da página de Funcionários -->
+    <script type="module" src="/public/assets/js/pages/funcionarios.js"></script>
+</body>
+
+</html>

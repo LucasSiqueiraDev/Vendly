@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Vendly - Produtos</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+</head>
+
+<vendly-shell>
+    <div class="container-fluid p-0">
+        <vendly-page-header section-label="Estoque / Produtos" title="Lista de Produtos" button-text="Criar Produto"
+            button-id="btnCriarProduto"></vendly-page-header>
+
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-body p-4">
+                <vendly-table id="tabelaProdutosComponent" table-id="tabelaProdutos"></vendly-table>
+            </div>
+        </div>
+
+        <!-- Componente de Modal Reutilizável -->
+        <vendly-modal id="modalProdutos" modal-id="modalDetalhesProduto" title="Detalhes do Produto"></vendly-modal>
+    </div>
+</vendly-shell>
+
+<script type="module" src="/src/app.js"></script>
+<script type="module" src="/public/assets/js/pages/produtos.js"></script>

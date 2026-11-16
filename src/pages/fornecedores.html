@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Vendly - Fornecedores</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+</head>
+
+<body>
+
+    <vendly-shell>
+        <div class="container-fluid p-0">
+
+            <!-- Cabeçalho da Tela -->
+            <vendly-page-header section-label="Estoque / Fornecedores" title="Lista de Fornecedores" button-text="Criar Fornecedor"
+                button-id="btnCriarFornecedor">
+            </vendly-page-header>
+
+            <!-- Card com a Tabela -->
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <vendly-table id="tabelaFornecedoresComponent" table-id="tabelaFornecedores"></vendly-table>
+                </div>
+            </div>
+
+            <!-- Modal Reutilizável de Detalhes -->
+            <vendly-modal id="modalFornecedores" modal-id="modalDetalhesFornecedor"
+                title="Detalhes do Fornecedor"></vendly-modal>
+
+        </div>
+    </vendly-shell>
+
+    <script type="module" src="/src/app.js"></script>
+
+    <!-- Script específico da página de Fornecedores -->
+    <script type="module" src="/public/assets/js/pages/fornecedores.js"></script>
+</body>
+
+</html>

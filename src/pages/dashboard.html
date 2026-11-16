@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vendly - Dashboard</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+    <link rel="stylesheet" href="/public/assets/css/pages/dashboard.css">
+</head>
+
+<body>
+
+    <vendly-shell>
+        <div class="container-fluid p-0 vendly-dashboard" aria-busy="true">
+
+            <div class="d-flex flex-wrap align-items-center justify-content-between mb-2">
+                <vendly-page-header 
+                    section-label="Visão geral" title="Dashboard" 
+                    button-text="" 
+                    button-id="">
+                </vendly-page-header>
+
+               
+                <button id="btnLimparFiltro" type="button" class="btn btn-sm btn-action-blue align-items-center gap-2 mb-4 shadow-sm" hidden aria-label="Limpar filtro de categoria">
+                    <span>Filtro: <strong id="nomeCategoriaAtiva">Todas</strong></span>
+                    <span>&times;</span>
+                </button>
+            </div>
+
+            <div id="dashboardMensagem" class="alert alert-info" role="status" aria-live="polite">
+                <span id="dashboardMensagemTexto">Carregando indicadores...</span>
+                <button id="dashboardTentarNovamente" type="button" class="btn btn-sm btn-outline-primary ms-2" hidden>Tentar novamente</button>
+            </div>
+            <p class="small text-secondary mb-3">Dados de demonstração do projeto. O período se aplica às vendas; o filtro de categoria se aplica ao estoque e aos produtos.</p>
+
+            <!-- NÍVEL 1: 4 Cards de KPIs -->
+            <div class="row g-3 mb-4">
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="card kpi-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-3 d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="text-secondary fw-semibold mb-1 small text-uppercase">Vendas concluídas</p>
+                                <h3 class="fw-bold text-dark mb-1" id="kpiFaturamento">—</h3>
+                                <span class="badge bg-success-subtle text-success border border-success px-2 py-1" id="kpiTendenciaCaixa">
+                                    Calculando comparação...
+                                </span>
+                            </div>
+                            <div class="kpi-icon bg-primary-subtle text-primary">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="card kpi-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-3 d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="text-secondary fw-semibold mb-1 small text-uppercase">Valor em Estoque</p>
+                                <h3 class="fw-bold text-dark mb-1" id="kpiPatrimonioEstoque">—</h3>
+                                <span class="text-muted small" id="kpiTotalUnidades">Calculando volume...</span>
+                                <small class="text-secondary d-block">Avaliado a preço de custo</small>
+                            </div>
+                            <div class="kpi-icon bg-info-subtle text-info">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="card kpi-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-3 d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="text-secondary fw-semibold mb-1 small text-uppercase">Catálogo Ativo</p>
+                                <h3 class="fw-bold text-dark mb-1" id="kpiProdutosAtivos">--</h3>
+                                <span class="badge bg-primary-subtle text-primary border border-primary px-2 py-1" id="kpiTotalSkus">
+                                    SKUs cadastrados
+                                </span>
+                            </div>
+                            <div class="kpi-icon bg-success-subtle text-success">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="card kpi-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-3 d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="text-secondary fw-semibold mb-1 small text-uppercase">Alerta de reposição</p>
+                                <h3 class="fw-bold text-danger mb-1" id="kpiAlertasEstoque">--</h3>
+                                <span class="badge bg-danger-subtle text-danger border border-danger px-2 py-1">
+                                    Produtos ativos com saldo baixo
+                                </span>
+                            </div>
+                            <div class="kpi-icon bg-danger-subtle text-danger">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficos Principais -->
+            <div class="row g-3 mb-4">
+                <!-- Gráfico 1: Vendas concluídas com Filtro de Período -->
+                <div class="col-12 col-xl-8">
+                    <div class="card dashboard-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                                <div>
+                                    <h5 class="fw-bold text-dark m-0">Vendas e custo estimado</h5>
+                                    <small class="text-secondary">Somente vendas concluídas. Custo estimado pelos preços de custo atuais.</small>
+                                </div>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Período das vendas">
+                                    <button type="button" id="btnPeriodo7d" class="btn btn-primary active" aria-pressed="true" disabled>7 dias</button>
+                                    <button type="button" id="btnPeriodoMensal" class="btn btn-outline-primary" aria-pressed="false" disabled>4 semanas</button>
+                                </div>
+                            </div>
+                            <p id="dashboardPeriodo" class="small text-secondary"></p>
+                            <div id="chartGiroCaixa" class="dashboard-chart" aria-label="Gráfico de vendas e custo estimado"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico 2: Rosca -->
+                <div class="col-12 col-xl-4">
+                    <div class="card dashboard-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="fw-bold text-dark m-0">Valor em estoque por categoria</h5>
+                                <small class="text-primary fw-semibold">Clique em uma fatia ou escolha uma categoria para filtrar o estoque.</small>
+                            </div>
+                            <label for="dashboardCategoria" class="small fw-semibold mt-3 mb-1">Categoria</label>
+                            <select id="dashboardCategoria" class="form-select mb-2" disabled><option value="">Todas as categorias</option></select>
+                            <div id="chartCategorias" class="dashboard-chart my-auto py-2" aria-label="Gráfico do valor em estoque por categoria"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Margem por Produto e Tabela de Alertas -->
+            <div class="row g-3 mb-4">
+                <div class="col-12 col-lg-7">
+                    <div class="card dashboard-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark m-0">Preço de custo vs. preço de venda</h5>
+                            <small class="text-secondary d-block mb-3" id="subtituloMargem">Até seis produtos por seleção</small>
+                            <div id="chartMargemProdutos" class="dashboard-chart" aria-label="Gráfico de preços de custo e venda"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <div class="card dashboard-card border-0 shadow-sm rounded-3 h-100">
+                        <div class="card-body p-4">
+                            <div class="dashboard-alertas-header d-flex align-items-center justify-content-between mb-3">
+                                <div>
+                                    <h5 class="fw-bold text-dark m-0">Itens para Reposição Imediata</h5>
+                                    <small class="text-secondary">Limite demonstrativo: 25 por produto; usa estoque mínimo cadastrado quando disponível.</small>
+                                </div>
+                                <a href="/src/pages/produtos.html" class="btn btn-sm btn-outline-primary fw-semibold">Ver catálogo</a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 text-nowrap">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th scope="col">SKU / Produto</th>
+                                            <th scope="col">Categoria</th>
+                                            <th class="text-center" scope="col">Saldo / mínimo</th>
+                                            <th class="text-end" scope="col">Situação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="listaAlertasEstoque">
+                                        <tr>
+                                            <td colspan="4" class="text-center text-muted py-3">Verificando estoque...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </vendly-shell>
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/public/assets/js/pages/dashboard.js"></script>
+</body>
+</html>

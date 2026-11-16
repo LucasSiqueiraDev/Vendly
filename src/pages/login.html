@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Vendly - Login</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+    <link rel="stylesheet" href="/public/assets/css/pages/login.css">
+</head>
+
+<body>
+
+    <div class="container-fluid vh-100 p-0">
+        <div class="row g-0 h-100">
+
+            <!-- ESQUERDA: Formulário de Login -->
+            <div class="login-painel-esquerda col-lg-4 d-flex flex-column justify-content-center bg-light">
+                <div class="w-100 mx-auto px-4 py-4" style="max-width: 420px;">
+
+                    <!-- BRANDING MOBILE: Visível apenas em celulares e tablets (d-lg-none) -->
+                    <div class="d-flex align-items-center justify-content-center gap-2 mb-4 d-lg-none text-center">
+                        <img src="/public/assets/images/vendlyIcon.svg" alt="Vendly Logo"
+                            class="img-fluid">
+                        <h1 class="fw-bold fs-3 m-0">vendly</h1>
+                    </div>
+
+                    <h2 class="fw-bold mb-1">Acessar Conta</h2>
+                    <p class="mb-4 pb-2">Demonstração: informe um e-mail válido e uma senha preenchida para entrar.</p>
+
+                    <!-- Alerta de erro visual -->
+                    <div id="loginAlert" class="alert alert-danger d-none py-2 px-3 fs-7 rounded-3" role="alert">
+                        Preencha todos os campos obrigatórios.
+                    </div>
+
+                    <form id="loginForm" novalidate>
+
+                        <!-- E-mail -->
+                        <div class="mb-3 text-start">
+                            <label for="usu_email" class="form-label fw-bold small">E-mail *</label>
+                            <input type="email" class="inputForm form-control py-3 rounded-3" id="usu_email"
+                                placeholder="ex: flavio@vendly.com.br" required>
+                            <div class="invalid-feedback">Digite um e-mail válido.</div>
+                        </div>
+
+                        <!-- Senha com Botão Estável de Alternar Visibilidade -->
+                        <div class="mb-4 text-start">
+                            <label for="usu_senha" class="form-label fw-bold small">Senha *</label>
+                            <div class="input-group">
+                                <input type="password" class="inputForm form-control py-3 rounded-start-3 border-end-0"
+                                    id="usu_senha" placeholder="Digite sua senha" required>
+                                <button class="btn btn-outline-secondary border-start-0 bg-white px-3 rounded-end-3"
+                                    type="button" id="togglePassword" tabindex="-1">
+                                    <i class="bi bi-eye" id="eyeIcon"></i>
+                                </button>
+                                <div class="invalid-feedback">A senha é obrigatória.</div>
+                            </div>
+                        </div>
+
+                        <!-- Botão Entrar -->
+                        <button type="submit"
+                            class="btn-entrar btn w-100 py-3 fw-bold mt-2 rounded-3 d-flex justify-content-center align-items-center gap-2"
+                            id="btnSubmit">
+                            <span id="btnText">Entrar</span>
+                            <div id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status">
+                                <span class="visually-hidden">Carregando...</span>
+                            </div>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- DIREITA: Branding Institucional -->
+            <div
+                class="login-painel-direita col-lg-8 d-none d-lg-flex flex-column justify-content-center align-items-center position-relative overflow-hidden">
+                <div class="z-1 px-5 text-center w-75">
+                    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+                        <img src="/public/assets/images/vendlyIcon-neutral-white.svg" alt="Vendly Logo"
+                            class="img-fluid">
+                        <h1 class="fw-bold fs-2 m-0">vendly</h1>
+                    </div>
+                    <p class="fs-6">Gestão simplificada e inteligente para o seu negócio.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Ponto central de inicialização dos Scripts -->
+    <script type="module" src="/src/app.js"></script>
+
+    <!-- Lógica isolada da tela de login -->
+    <script type="module" src="/public/assets/js/pages/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Vendly - Categorias</title>
+    <script src="/src/components/VendlyHead/VendlyHead.js"></script>
+</head>
+
+<body>
+
+    <vendly-shell>
+        <div class="container-fluid p-0">
+
+            <!-- Cabeçalho da Tela -->
+            <vendly-page-header section-label="Estoque / Categorias" title="Lista de Categorias" button-text="Criar Categoria" button-id="btnCriarCategoria">
+            </vendly-page-header>
+
+            <!-- Card com a Tabela -->
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <vendly-table id="tabelaCategoriasComponent" table-id="tabelaCategorias"></vendly-table>
+                </div>
+            </div>
+
+            <vendly-modal id="modalCategorias" modal-id="modalDetalhesCategoria"
+                title="Detalhes da Categoria"></vendly-modal>
+        </div>
+    </vendly-shell>
+
+    <script type="module" src="/src/app.js"></script>
+
+    <!-- Script específico da página de Categorias -->
+    <script type="module" src="/public/assets/js/pages/categorias.js"></script>
+</body>
+
+</html>

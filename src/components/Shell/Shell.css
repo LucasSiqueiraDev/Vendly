@@ -1,0 +1,43 @@
+vendly-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.shell-body {
+  display: flex;
+  flex: 1;
+  min-height: 0; /* Essencial para flexbox não estourar a tela */
+  height: calc(100vh - 56px); /* Subtrai a altura da Navbar */
+  overflow: hidden;
+}
+
+.shell-main {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: var(--color-neutral-white);
+  overflow-y: auto; /* Apenas o conteúdo central rola, se necessário */
+  overflow-x: hidden;
+}
+
+/* Mantém o conteúdo dentro da área visível do navegador no celular. */
+@media (max-width: 767.98px) {
+  vendly-shell {
+    height: 100dvh;
+  }
+
+  vendly-navbar {
+    flex-shrink: 0;
+  }
+
+  .shell-body {
+    height: auto;
+  }
+
+  .shell-main {
+    min-width: 0;
+    padding: 1rem 0.5rem;
+  }
+}
