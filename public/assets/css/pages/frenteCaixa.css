@@ -1,0 +1,142 @@
+/* Estrutura da página; tabelas e controles comuns usam Table.css e Bootstrap. */
+.vendly-pdv-page .shell-main { background:var(--color-neutral-white); }
+.pdv-page { color:var(--color-brand-blue-dark); font-size:14px; }
+.pdv-page [hidden] { display:none!important; }
+.pdv-page h2 { font-size:20px; font-weight:600; margin:0; }
+.pdv-page h3 { font-size:15px; font-weight:600; margin:0; }
+.pdv-page button { cursor:pointer; }
+.pdv-page button:disabled { cursor:not-allowed; opacity:.5; }
+.pdv-page button:focus-visible { outline:2px solid var(--color-brand-blue-medium); outline-offset:2px; }
+.pdv-card { border:1px solid var(--color-neutral-gray-light); border-radius:12px; min-width:0; overflow:hidden; }
+.pdv-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.pdv-heading h2 { font-size:16px; }
+.pdv-heading>span, .pdv-note { color:var(--color-neutral-gray-dark); font-size:12px; }
+.pdv-message { color:var(--color-semantic-success); margin:12px 0; }
+.pdv-message:empty { display:none; }
+.pdv-message.is-error { color:var(--color-semantic-danger); }
+.pdv-secondary, .pdv-danger { padding:10px 16px; border:1px solid var(--color-neutral-gray-light); border-radius:7px; background:var(--color-neutral-white); color:var(--color-brand-blue-medium); }
+.pdv-secondary:hover { background:var(--color-neutral-white); }
+.pdv-danger { border-color:var(--color-semantic-danger); color:var(--color-semantic-danger); font-weight:600; }
+.pdv-danger:hover:not(:disabled) { background:var(--color-semantic-danger); color:var(--color-neutral-white); }
+
+/* Abas e área de atendimento. */
+.pdv-tabs-shell { margin-top:52px; border:1px solid var(--color-neutral-gray-light); border-radius:0 12px 12px 12px; background:var(--color-neutral-white); position:relative; }
+.pdv-tabs { display:flex; gap:4px; position:absolute; bottom:100%; left:-1px; }
+.pdv-tabs button { border:1px solid var(--color-neutral-gray-light); border-radius:9px 9px 0 0; background:var(--color-neutral-white); color:var(--color-neutral-gray-dark); padding:12px 20px; white-space:nowrap; }
+.pdv-tabs button[aria-selected="true"] { background:var(--color-neutral-white); border-bottom-color:var(--color-neutral-white); color:var(--color-brand-blue-medium); box-shadow:inset 0 3px var(--color-brand-blue-medium); margin-bottom:-1px; }
+.pdv-tabs-shell>[role="tabpanel"] { padding:20px; }
+.pdv-boundary { position:relative; isolation:isolate; min-height:600px; }
+.pdv-grid { display:grid; grid-template-columns:minmax(0,1fr) 290px; gap:20px; }
+.pdv-workspace { display:flex; flex-direction:column; gap:20px; min-width:0; }
+.pdv-quantity { width:105px; }
+#pdvItensComponent input { width:75px; padding:7px; border:1px solid var(--color-neutral-gray-light); border-radius:6px; background:var(--color-neutral-white); color:var(--color-brand-blue-dark); font:inherit; }
+#pdvItensComponent strong, #pdvItensComponent small { display:block; white-space:normal; }
+#pdvItensComponent small { color:var(--color-neutral-gray-dark); font-size:12px; margin-top:4px; }
+.pdv-remove { background:var(--color-neutral-white); color:var(--color-semantic-danger); border:0; border-radius:5px; font-size:20px; width:28px; }
+
+/* Catálogo com rolagem própria e coluna recolhível. */
+.pdv-catalogo { display:grid; grid-template-columns:150px minmax(0,1fr); height:310px; border:1px solid var(--color-neutral-gray-light); border-radius:8px; overflow:hidden; }
+.pdv-categories, .pdv-products { padding:12px; min-width:0; min-height:0; display:flex; flex-direction:column; }
+.pdv-categories { background:var(--color-neutral-white); border-right:1px solid var(--color-neutral-gray-light); }
+.pdv-catalogo .pdv-heading { flex-wrap:nowrap; margin-bottom:10px; }
+.pdv-catalogo h3 { font-size:13px; }
+.pdv-catalogo .pdv-heading button { border:0; border-radius:4px; color:var(--color-brand-blue-medium); background:transparent; font-size:22px; line-height:1; }
+#pdvCatalogoCategorias, .pdv-products-list { overflow-y:auto; min-height:0; scrollbar-width:thin; }
+#pdvCatalogoCategorias button { display:block; width:100%; padding:10px 8px; text-align:left; border:0; border-radius:5px; background:transparent; color:var(--color-neutral-gray-dark); font:inherit; font-size:12px; }
+#pdvCatalogoCategorias button[aria-pressed="true"] { background:var(--color-brand-blue-medium); color:var(--color-neutral-white); }
+#pdvCatalogoCategorias button:hover:not([aria-pressed="true"]) { background:var(--color-neutral-gray-light); }
+.pdv-product { display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; padding:11px; margin-bottom:7px; border:1px solid var(--color-neutral-gray-light); border-radius:6px; background:var(--color-neutral-white); color:var(--color-brand-blue-dark); text-align:left; }
+.pdv-product strong, .pdv-product small { display:block; }
+.pdv-product strong { font-size:13px; }
+.pdv-product small { color:var(--color-neutral-gray-dark); margin-top:4px; font-size:11px; }
+.pdv-product>span:last-child { font-size:22px; color:var(--color-brand-blue-medium); }
+.pdv-product:hover:not(:disabled), .pdv-product:focus-visible { background:var(--color-neutral-white); border-color:var(--color-brand-blue-medium); }
+.pdv-catalogo.is-collapsed { grid-template-columns:1fr; }
+.pdv-catalogo.is-collapsed .pdv-categories { display:none; }
+
+/* Resumo e bloqueio exclusivos do Ponto de Venda. */
+.pdv-summary { background:var(--color-brand-blue-dark); color:var(--color-neutral-white); border-radius:12px; padding:25px; min-height:520px; display:flex; flex-direction:column; align-self:start; }
+.pdv-summary h2 { margin:12px 0; font-size:22px; }
+.pdv-summary small, .pdv-summary dt, .pdv-total>span { color:var(--color-neutral-gray-light); }
+.pdv-summary dl>div { display:flex; justify-content:space-between; gap:10px; margin-bottom:16px; }
+.pdv-summary dt { font-weight:400; }
+.pdv-summary dd { margin:0; }
+.pdv-total { display:flex; flex-direction:column; gap:16px; margin-top:auto; padding-top:22px; border-top:1px dashed var(--color-neutral-gray-light); }
+.pdv-total strong { font-size:32px; }
+.pdv-total button { background:var(--color-brand-green-action); color:var(--color-brand-green-dark); border:0; border-radius:7px; padding:14px; font-weight:600; }
+.pdv-total small { font-size:11px; }
+.pdv-overlay { position:absolute; inset:0; z-index:2; display:grid; place-items:center; padding:24px; text-align:center; border-radius:10px; background:transparent; backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px); color:var(--color-neutral-white); }
+.pdv-overlay::before { content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; background:var(--color-neutral-black); opacity:.77; }
+.pdv-overlay h2 { font-size:30px; margin:20px 0 12px; }
+.pdv-overlay p { color:var(--color-neutral-gray-light); }
+.pdv-state-icon { display:inline-grid; place-items:center; width:72px; height:72px; border:2px solid currentColor; border-radius:50%; font-size:60px; line-height:1; color:var(--color-semantic-danger-light); }
+.pdv-state-icon.is-open { color:var(--color-brand-green-action); font-size:42px; }
+
+/* Gerenciamento e consulta usam os mesmos cartões e tabelas. */
+.caixa-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-bottom:20px; }
+.caixa-stats article { padding:20px 16px; }
+.caixa-stats span { display:block; color:var(--color-neutral-gray-dark); font-size:12px; }
+.caixa-stats strong { display:block; margin-top:12px; font-size:24px; overflow-wrap:anywhere; }
+.caixa-stats .caixa-balance { background:var(--color-brand-blue-dark); color:var(--color-neutral-white); }
+.caixa-balance span { color:var(--color-neutral-gray-light); }
+.caixa-details { display:grid; grid-template-columns:minmax(250px,.85fr) minmax(0,1.6fr); gap:20px; }
+.caixa-credit { color:var(--color-semantic-success); font-weight:600; }
+.caixa-history-consultar { border:0; border-radius:5px; background:transparent; color:var(--color-brand-blue-medium); padding:7px; }
+.caixa-history-data { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+.caixa-history-data dt { color:var(--color-neutral-gray-dark); font-weight:400; }
+.caixa-history-data dd { margin:4px 0 0; overflow-wrap:anywhere; }
+@media(max-width:1100px) {
+    .pdv-grid { grid-template-columns:minmax(0,1fr) 250px; gap:14px; }
+    .caixa-stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .caixa-details { grid-template-columns:1fr; }
+}
+@media(max-width:850px) {
+    .pdv-grid { grid-template-columns:1fr; }
+    .pdv-summary { min-height:400px; }
+}
+@media(max-width:600px) {
+    .pdv-tabs-shell>[role="tabpanel"] { padding:12px; }
+    .pdv-tabs button { padding:12px; font-size:12px; }
+    .pdv-catalogo { grid-template-columns:110px minmax(0,1fr); }
+    .caixa-history-data { grid-template-columns:1fr; }
+}
+
+/* Fundo na cor da borda. A transparência fica só no fundo, não no texto. */
+.pdv-secondary, .pdv-danger, .pdv-remove, .caixa-history-consultar,
+.pdv-state-icon, .pdv-tabs button, .pdv-product,
+.pdv-catalogo .pdv-heading button, .pdv-page .vendly-status {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+.pdv-secondary::before, .pdv-danger::before, .pdv-remove::before,
+.caixa-history-consultar::before, .pdv-state-icon::before,
+.pdv-tabs button::before, .pdv-product::before,
+.pdv-catalogo .pdv-heading button::before, .pdv-page .vendly-status::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: .16;
+    pointer-events: none;
+}
+.pdv-secondary::before, .pdv-tabs button::before, .pdv-product::before,
+.pdv-page .vendly-status.is-neutral::before {
+    background: var(--color-neutral-gray-light);
+    opacity: .3;
+}
+.pdv-remove, .caixa-history-consultar, .pdv-catalogo .pdv-heading button {
+    border: 1px solid currentColor;
+}
+.pdv-secondary:hover::before, .pdv-remove:hover::before,
+.caixa-history-consultar:hover::before, .pdv-catalogo .pdv-heading button:hover::before {
+    opacity: .25;
+}
+.pdv-product:hover:not(:disabled)::before, .pdv-product:focus-visible::before {
+    background: var(--color-brand-blue-medium);
+    opacity: .12;
+}
+.pdv-secondary:hover::before { opacity: .4; }
+.pdv-danger:hover:not(:disabled)::before { opacity: 0; }

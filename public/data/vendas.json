@@ -1,0 +1,452 @@
+[
+    {
+        "id": 1,
+        "codigo": "VND-1001",
+        "dataVenda": "2026-10-24T00:00:00",
+        "cliente": "Consumidor não identificado",
+        "operador": "Lucas Oliveira",
+        "formaPagamento": "Dinheiro",
+        "total": 4570,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-001",
+                "nome": "Arroz Integral 1kg",
+                "quantidade": 1,
+                "precoUnitario": 790
+            },
+            {
+                "produtoCodigo": "SUP-004",
+                "nome": "Café Torrado e Moído 500g",
+                "quantidade": 2,
+                "precoUnitario": 1890
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 2,
+        "codigo": "VND-1002",
+        "dataVenda": "2026-10-24T14:30:00",
+        "cliente": "Beatriz Lima",
+        "operador": "Ana Souza",
+        "formaPagamento": "Não informado",
+        "total": 3767,
+        "status": "Não concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-002",
+                "nome": "Feijão Preto 1kg",
+                "quantidade": 2,
+                "precoUnitario": 850
+            },
+            {
+                "produtoCodigo": "SUP-005",
+                "nome": "Óleo de Soja 900ml",
+                "quantidade": 3,
+                "precoUnitario": 689
+            }
+        ],
+        "observacao": "Venda aguardando finalização. Nenhum pagamento confirmado."
+    },
+    {
+        "id": 3,
+        "codigo": "VND-1003",
+        "dataVenda": "2026-10-24T23:59:59",
+        "cliente": "Rafael Martins",
+        "operador": "João Silva",
+        "formaPagamento": "Cartão de débito",
+        "total": 5787,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-003",
+                "nome": "Açúcar Refinado 1kg",
+                "quantidade": 3,
+                "precoUnitario": 499
+            },
+            {
+                "produtoCodigo": "SUP-006",
+                "nome": "Azeite de Oliva Extra Virgem 500ml",
+                "quantidade": 1,
+                "precoUnitario": 4290
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 4,
+        "codigo": "VND-1004",
+        "dataVenda": "2026-10-25T00:00:00",
+        "cliente": "Camila Rocha",
+        "operador": "Lucas Oliveira",
+        "formaPagamento": "Não informado",
+        "total": 2790,
+        "status": "Cancelada",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-004",
+                "nome": "Café Torrado e Moído 500g",
+                "quantidade": 1,
+                "precoUnitario": 1890
+            },
+            {
+                "produtoCodigo": "SUP-007",
+                "nome": "Macarrão Espaguete 500g",
+                "quantidade": 2,
+                "precoUnitario": 450
+            }
+        ],
+        "observacao": "Venda cancelada a pedido do cliente, antes do pagamento."
+    },
+    {
+        "id": 5,
+        "codigo": "VND-1005",
+        "dataVenda": "2026-10-25T14:30:00",
+        "cliente": "Pedro Alves",
+        "operador": "Ana Souza",
+        "formaPagamento": "Dinheiro",
+        "total": 2185,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-005",
+                "nome": "Óleo de Soja 900ml",
+                "quantidade": 2,
+                "precoUnitario": 689
+            },
+            {
+                "produtoCodigo": "SUP-008",
+                "nome": "Molho de Tomate Sachê 300g",
+                "quantidade": 3,
+                "precoUnitario": 269
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 6,
+        "codigo": "VND-1006",
+        "dataVenda": "2026-10-25T23:59:59",
+        "cliente": "Fernanda Ribeiro",
+        "operador": "João Silva",
+        "formaPagamento": "Pix",
+        "total": 13390,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-006",
+                "nome": "Azeite de Oliva Extra Virgem 500ml",
+                "quantidade": 3,
+                "precoUnitario": 4290
+            },
+            {
+                "produtoCodigo": "SUP-009",
+                "nome": "Farinha de Trigo Especial 1kg",
+                "quantidade": 1,
+                "precoUnitario": 520
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 7,
+        "codigo": "VND-1007",
+        "dataVenda": "2026-10-26T00:00:00",
+        "cliente": "Consumidor não identificado",
+        "operador": "Lucas Oliveira",
+        "formaPagamento": "Não informado",
+        "total": 870,
+        "status": "Não concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-007",
+                "nome": "Macarrão Espaguete 500g",
+                "quantidade": 1,
+                "precoUnitario": 450
+            },
+            {
+                "produtoCodigo": "SUP-010",
+                "nome": "Sal Refinado 1kg",
+                "quantidade": 2,
+                "precoUnitario": 210
+            }
+        ],
+        "observacao": "Venda aguardando finalização. Nenhum pagamento confirmado."
+    },
+    {
+        "id": 8,
+        "codigo": "VND-1008",
+        "dataVenda": "2026-10-26T14:30:00",
+        "cliente": "Beatriz Lima",
+        "operador": "Ana Souza",
+        "formaPagamento": "Cartão de crédito",
+        "total": 2185,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-008",
+                "nome": "Molho de Tomate Sachê 300g",
+                "quantidade": 2,
+                "precoUnitario": 269
+            },
+            {
+                "produtoCodigo": "SUP-011",
+                "nome": "Leite UHT Integral 1L",
+                "quantidade": 3,
+                "precoUnitario": 549
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 9,
+        "codigo": "VND-1009",
+        "dataVenda": "2026-10-26T23:59:59",
+        "cliente": "Rafael Martins",
+        "operador": "João Silva",
+        "formaPagamento": "Não informado",
+        "total": 2750,
+        "status": "Cancelada",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-009",
+                "nome": "Farinha de Trigo Especial 1kg",
+                "quantidade": 3,
+                "precoUnitario": 520
+            },
+            {
+                "produtoCodigo": "SUP-012",
+                "nome": "Manteiga com Sal 200g",
+                "quantidade": 1,
+                "precoUnitario": 1190
+            }
+        ],
+        "observacao": "Venda cancelada a pedido do cliente, antes do pagamento."
+    },
+    {
+        "id": 10,
+        "codigo": "VND-1010",
+        "dataVenda": "2026-10-27T00:00:00",
+        "cliente": "Camila Rocha",
+        "operador": "Lucas Oliveira",
+        "formaPagamento": "Pix",
+        "total": 1868,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-010",
+                "nome": "Sal Refinado 1kg",
+                "quantidade": 1,
+                "precoUnitario": 210
+            },
+            {
+                "produtoCodigo": "SUP-013",
+                "nome": "Requeijão Cremos 200g",
+                "quantidade": 2,
+                "precoUnitario": 829
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 11,
+        "codigo": "VND-1011",
+        "dataVenda": "2026-10-27T14:30:00",
+        "cliente": "Pedro Alves",
+        "operador": "Ana Souza",
+        "formaPagamento": "Cartão de débito",
+        "total": 5268,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-011",
+                "nome": "Leite UHT Integral 1L",
+                "quantidade": 2,
+                "precoUnitario": 549
+            },
+            {
+                "produtoCodigo": "SUP-014",
+                "nome": "Queijo Mussarela Fatiado 200g",
+                "quantidade": 3,
+                "precoUnitario": 1390
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 12,
+        "codigo": "VND-1012",
+        "dataVenda": "2026-10-27T23:59:59",
+        "cliente": "Fernanda Ribeiro",
+        "operador": "João Silva",
+        "formaPagamento": "Não informado",
+        "total": 4560,
+        "status": "Não concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-012",
+                "nome": "Manteiga com Sal 200g",
+                "quantidade": 3,
+                "precoUnitario": 1190
+            },
+            {
+                "produtoCodigo": "SUP-015",
+                "nome": "Presunto Cozido Fatiado 200g",
+                "quantidade": 1,
+                "precoUnitario": 990
+            }
+        ],
+        "observacao": "Venda aguardando finalização. Nenhum pagamento confirmado."
+    },
+    {
+        "id": 13,
+        "codigo": "VND-1013",
+        "dataVenda": "2026-10-28T00:00:00",
+        "cliente": "Consumidor não identificado",
+        "operador": "Lucas Oliveira",
+        "formaPagamento": "Dinheiro",
+        "total": 1487,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-013",
+                "nome": "Requeijão Cremos 200g",
+                "quantidade": 1,
+                "precoUnitario": 829
+            },
+            {
+                "produtoCodigo": "SUP-016",
+                "nome": "Iogurte Natural 170g",
+                "quantidade": 2,
+                "precoUnitario": 329
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 14,
+        "codigo": "VND-1014",
+        "dataVenda": "2026-10-28T14:30:00",
+        "cliente": "Beatriz Lima",
+        "operador": "Ana Souza",
+        "formaPagamento": "Não informado",
+        "total": 3947,
+        "status": "Cancelada",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-014",
+                "nome": "Queijo Mussarela Fatiado 200g",
+                "quantidade": 2,
+                "precoUnitario": 1390
+            },
+            {
+                "produtoCodigo": "SUP-017",
+                "nome": "Creme de Leite TP 200g",
+                "quantidade": 3,
+                "precoUnitario": 389
+            }
+        ],
+        "observacao": "Venda cancelada a pedido do cliente, antes do pagamento."
+    },
+    {
+        "id": 15,
+        "codigo": "VND-1015",
+        "dataVenda": "2026-10-28T23:59:59",
+        "cliente": "Rafael Martins",
+        "operador": "João Silva",
+        "formaPagamento": "Cartão de débito",
+        "total": 3620,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-015",
+                "nome": "Presunto Cozido Fatiado 200g",
+                "quantidade": 3,
+                "precoUnitario": 990
+            },
+            {
+                "produtoCodigo": "SUP-018",
+                "nome": "Leite Condensado 395g",
+                "quantidade": 1,
+                "precoUnitario": 650
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 16,
+        "codigo": "VND-1016",
+        "dataVenda": "2026-10-29T00:00:00",
+        "cliente": "Camila Rocha",
+        "operador": "Lucas Oliveira",
+        "formaPagamento": "Cartão de crédito",
+        "total": 887,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-016",
+                "nome": "Iogurte Natural 170g",
+                "quantidade": 1,
+                "precoUnitario": 329
+            },
+            {
+                "produtoCodigo": "SUP-019",
+                "nome": "Detergente Líquido 500ml",
+                "quantidade": 2,
+                "precoUnitario": 279
+            }
+        ],
+        "observacao": ""
+    },
+    {
+        "id": 17,
+        "codigo": "VND-1017",
+        "dataVenda": "2026-10-29T14:30:00",
+        "cliente": "Pedro Alves",
+        "operador": "Ana Souza",
+        "formaPagamento": "Não informado",
+        "total": 4648,
+        "status": "Não concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-017",
+                "nome": "Creme de Leite TP 200g",
+                "quantidade": 2,
+                "precoUnitario": 389
+            },
+            {
+                "produtoCodigo": "SUP-020",
+                "nome": "Sabão em Pó 1kg",
+                "quantidade": 3,
+                "precoUnitario": 1290
+            }
+        ],
+        "observacao": "Venda aguardando finalização. Nenhum pagamento confirmado."
+    },
+    {
+        "id": 18,
+        "codigo": "VND-1018",
+        "dataVenda": "2026-10-29T23:59:59",
+        "cliente": "Fernanda Ribeiro",
+        "operador": "João Silva",
+        "formaPagamento": "Pix",
+        "total": 3400,
+        "status": "Concluída",
+        "itens": [
+            {
+                "produtoCodigo": "SUP-018",
+                "nome": "Leite Condensado 395g",
+                "quantidade": 3,
+                "precoUnitario": 650
+            },
+            {
+                "produtoCodigo": "SUP-021",
+                "nome": "Amaciante de Roupas 2L",
+                "quantidade": 1,
+                "precoUnitario": 1450
+            }
+        ],
+        "observacao": ""
+    }
+]

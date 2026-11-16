@@ -1,0 +1,106 @@
+.login-painel-esquerda {
+    background-image: url(/public/assets/images/vendlyLoginBG.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 180vh;
+}
+
+/* Seletores corrigidos para aplicar a cor do texto no painel da esquerda */
+.login-painel-esquerda h2,
+.login-painel-esquerda p,
+.login-painel-esquerda label,
+.color-brand-blue-dark {
+    color: var(--color-brand-blue-dark);
+}
+
+.login-painel-esquerda img{
+    max-width: 100px;
+}
+
+.login-painel-direita {
+    background: var(--color-brand-blue-medium);
+    font-family: var(--font-secondary);
+    color: var(--color-neutral-white);
+}
+
+.login-painel-direita h1 {
+    font-size: 8rem !important;
+}
+
+.login-painel-direita p {
+    font-size: 3rem !important;
+    font-weight: 600;
+}
+
+.login-painel-direita img {
+    max-width: 150px;
+}
+
+.btn-entrar {
+    background-color: var(--color-brand-blue-dark);
+    color: var(--color-neutral-white);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-entrar:hover {
+    background-color: var(--color-brand-blue-medium);
+    color: var(--color-neutral-white);
+}
+
+/* Remove o ícone de olho nativo do Edge / Chrome / Safari */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none !important;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+}
+
+.inputForm {
+    border-color: var(--color-neutral-gray-light);
+}
+
+.inputForm:focus {
+    border-color: var(--color-brand-green-action);
+    box-shadow: 0 0 0 .25rem var(--color-brand-green-action);
+}
+
+#togglePassword {
+    border-color: var(--color-neutral-gray-light) !important;
+}
+
+/* Mantém o botão de olho do Vendly com fundo limpo no hover e foco */
+#togglePassword:focus,
+#togglePassword:active {
+    box-shadow: none !important;
+}
+
+.bi-eye, .bi-eye-slash {
+    color: var(--color-brand-blue-dark);
+}
+
+.bi-eye:hover, .bi-eye-slash:hover {
+    color: var(--color-brand-green-action);
+}
+
+/* ==========================================================================
+   Ajustes Responsivos para Dispositivos Móveis (Celulares e Tablets)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .login-painel-esquerda {
+        background-size: 100vh;
+        background-position: center;
+        min-height: 100vh;
+    }
+
+    .login-painel-esquerda h1{
+        font-family: var(--font-secondary);
+        font-size: 8vh !important;
+        color: var(--color-brand-blue-medium);
+    }
+
+}

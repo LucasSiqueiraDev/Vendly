@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "Distribuidora Ambev",
+    "telefone": "(11) 4004-0010",
+    "email": "contato@ambevdistribuicao.com.br",
+    "contatoDireto": "Falar com Carlos (Gerente)"
+  },
+  {
+    "id": 2,
+    "nome": "Laticínios Nestlé Brasil",
+    "telefone": "(11) 0800-770-2411",
+    "email": "vendas.varejo@nestle.com.br",
+    "contatoDireto": "https://loja.nestle.com.br"
+  },
+  {
+    "id": 3,
+    "nome": "Moinho Paulista Alimentos",
+    "telefone": "(19) 3871-9000",
+    "email": "comercial@moinhopaulista.com.br",
+    "contatoDireto": "Atendimento via Whats: (19) 99999-8888"
+  }
+]

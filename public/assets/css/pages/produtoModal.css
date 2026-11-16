@@ -1,0 +1,129 @@
+.produto-modal .modal-dialog {
+    max-width: 1080px;
+}
+
+.produto-modal .modal-dialog:not(:has(.produto-tabs)) {
+    max-width: 500px;
+}
+
+.produto-modal .modal-body {
+    padding: 24px;
+}
+
+.produto-tabs {
+    gap: 24px;
+    border-bottom: 1px solid var(--color-neutral-gray-light);
+    margin-bottom: 24px;
+}
+
+.produto-tabs .nav-link {
+    padding: 0 0 12px;
+    color: var(--color-brand-blue-dark);
+    background: transparent;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+}
+
+.produto-tabs .nav-link.active {
+    color: var(--color-brand-blue-medium);
+    border-bottom-color: var(--color-brand-green-action);
+}
+
+.produto-modal #produto-painel-geral .cadastro-form {
+    grid-template-columns: 1fr 1fr .8fr;
+    grid-template-areas:
+        "codigo nome status"
+        "categoria unidade status"
+        "custo . venda"
+        "barras barras imagem"
+        "descricao descricao descricao";
+    gap: 20px;
+}
+
+.produto-modal [data-campo="codigo"] { grid-area: codigo; }
+.produto-modal [data-campo="nome"] { grid-area: nome; }
+.produto-modal [data-campo="status"] { grid-area: status; padding-left: 24px; border-left: 1px solid var(--color-neutral-gray-light); }
+.produto-modal [data-campo="categoria"] { grid-area: categoria; }
+.produto-modal [data-campo="unidadeMedida"] { grid-area: unidade; }
+.produto-modal [data-campo="precoCusto"] { grid-area: custo; }
+.produto-modal [data-campo="precoVenda"] { grid-area: venda; }
+.produto-modal [data-campo="codigoBarras"] { grid-area: barras; }
+.produto-modal [data-campo="caminhoImagem"] { grid-area: imagem; }
+.produto-modal [data-campo="descricao"] { grid-area: descricao; }
+
+.produto-modal .cadastro-form-error {
+    grid-column: 1 / -1;
+}
+
+.produto-datas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px 24px;
+    margin: 24px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-neutral-gray-light);
+    font-size: 12px;
+}
+
+.produto-datas dt { font-weight: 500; }
+.produto-datas dd { margin: 4px 0 0; }
+.produto-simulacao { font-size: 12px; margin: 20px 0 0; }
+.produto-saldo { display: flex; align-items: baseline; gap: 8px; padding: 16px; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-gray-light); border-radius: 8px; }
+.produto-saldo strong { font-size: 26px; }
+.produto-movimento-form { margin: 20px 0 28px; }
+.produto-movimento-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.produto-movimento-campos label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.produto-movimento-ajuda { font-size: 13px; margin: 8px 0 0; }
+.produto-historico-titulo { font-size: 18px; font-weight: 600; }
+.produto-modal .stock-product-code { display: block; margin-top: 4px; font-size: 12px; }
+.produto-modal #tabelaEstoqueProduto td { min-width: 110px; }
+.produto-modal #tabelaEstoqueProduto td:last-child { min-width: 240px; }
+
+.produto-modal[data-produto-aba="estoque"] .modal-footer [data-cadastro-acao],
+.produto-modal[data-produto-aba="estoque"] .modal-footer [type="submit"] {
+    display: none;
+}
+
+.produto-modal .is-adjustment {
+    color: var(--color-brand-blue-medium);
+    border-color: var(--color-brand-blue-medium);
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+
+.produto-modal .is-adjustment::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: .16;
+}
+
+@media (max-width: 767px) {
+    .produto-modal #produto-painel-geral .cadastro-form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "codigo nome" "categoria unidade" "status status" "custo venda" "barras imagem" "descricao descricao";
+    }
+    .produto-modal [data-campo="status"] { padding-left: 0; border-left: 0; }
+}
+
+@media (max-width: 575px) {
+    .produto-modal .modal-body { padding: 16px; }
+    .produto-tabs { gap: 16px; font-size: 14px; }
+    .produto-modal #produto-painel-geral .cadastro-form {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "codigo" "nome" "status" "categoria" "unidade" "custo" "venda" "barras" "imagem" "descricao";
+    }
+    .produto-movimento-campos { grid-template-columns: minmax(0, 1fr); }
+}
+
+.produto-modal textarea:focus {
+    outline: 2px solid var(--color-brand-blue-medium);
+    outline-offset: 2px;
+    box-shadow: none;
+}

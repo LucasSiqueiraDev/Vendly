@@ -1,0 +1,61 @@
+
+.vendly-dashboard .kpi-card,
+.vendly-dashboard .dashboard-card {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vendly-dashboard .kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1.25rem rgba(13, 71, 161, 0.12) !important;
+}
+
+.vendly-dashboard .dashboard-card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+
+.vendly-dashboard .kpi-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.vendly-dashboard .kpi-card:hover .kpi-icon {
+  transform: scale(1.08);
+}
+
+
+.vendly-dashboard #chartCategorias .apexcharts-pie-area {
+  cursor: pointer;
+}
+.vendly-dashboard { min-width: 0; }
+.vendly-dashboard [hidden] { display: none !important; }
+.vendly-dashboard #btnLimparFiltro:not([hidden]) { display: inline-flex; }
+.vendly-dashboard .row > [class*="col-"] { min-width: 0; }
+.vendly-dashboard .kpi-card .card-body { gap: 12px; }
+.vendly-dashboard .kpi-card .card-body > div:first-child { min-width: 0; }
+.vendly-dashboard .kpi-card h3 { overflow-wrap: anywhere; font-size: clamp(1.25rem, 2vw, 1.75rem); }
+.vendly-dashboard .kpi-card .badge { white-space: normal; text-align: left; }
+.vendly-dashboard .dashboard-chart { width: 100%; min-width: 0; min-height: 300px; }
+.vendly-dashboard .dashboard-chart-message { display: grid; align-content: center; padding: 24px; color: var(--color-neutral-gray-dark); }
+.vendly-dashboard .apexcharts-tooltip { color: var(--color-neutral-gray-dark); }
+.vendly-dashboard .table-responsive { max-width: 100%; }
+.vendly-dashboard #listaAlertasEstoque td:first-child { min-width: 170px; white-space: normal; overflow-wrap: anywhere; }
+
+@media (max-width: 767.98px) {
+    .vendly-dashboard .dashboard-card > .card-body { padding: 16px !important; }
+    .vendly-dashboard .dashboard-card h5 { font-size: 17px; }
+    .vendly-dashboard .dashboard-chart { min-height: 280px; }
+    .vendly-dashboard .dashboard-alertas-header { flex-wrap: wrap; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vendly-dashboard .kpi-card, .vendly-dashboard .dashboard-card, .vendly-dashboard .kpi-icon { transition: none; }
+    .vendly-dashboard .kpi-card:hover, .vendly-dashboard .kpi-card:hover .kpi-icon { transform: none; }
+}
